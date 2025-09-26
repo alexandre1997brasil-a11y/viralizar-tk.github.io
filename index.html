@@ -3,95 +3,228 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Guia Viralizar no TikTok</title>
+  <title>Comprar: Guia + Análise — R$30/R$20/R$50</title>
+  
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    body{
-      margin:0;
-      font-family:sans-serif;
-      background:#fff;
-      color:#111;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      text-align:center;
-      padding:20px;
+    body {
+      background: linear-gradient(to right, #fefefe, #ffe6e6);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
     }
-    .box{ max-width:480px; }
-    button{
-      background:#ff3b6b;
-      color:#fff;
-      border:0;
-      padding:16px 22px;
-      border-radius:10px;
-      font-size:18px;
-      font-weight:700;
-      cursor:pointer;
-      margin-top:20px;
-      width:100%;
+
+    .hero {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      background: #fff;
+      text-align: center;
     }
-    .hidden{ display:none; }
-    .pix-box{
-      margin-top:20px;
-      padding:16px;
-      border:2px solid #eee;
-      border-radius:12px;
+
+    .cover-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #ffd6d6;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
     }
-    .pix-key{
-      font-size:20px;
-      font-weight:700;
-      word-wrap:break-word;
-      margin:12px 0;
+
+    h2 {
+      font-weight: 900;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #e6005c;
     }
-    .qr{
-      margin:14px auto;
-      max-width:180px;
+
+    .product-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 25px;
     }
-    .note{
-      font-size:14px;
-      margin:10px 0;
-      color:#555;
+
+    .big-btn {
+      font-weight: 700;
+      font-size: 18px;
+      padding: 18px 15px;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .big-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .note {
+      font-size: 15px;
+      color: #555;
+      margin-top: 15px;
+    }
+
+    .pix-key {
+      font-weight: 700;
+      background: #fdf0f2;
+      padding: 14px;
+      border-radius: 10px;
+      word-break: break-all;
+      font-size: 18px;
+      color: #d6004a;
+      border: 1px dashed #ffb3c6;
+      margin-top: 10px;
+    }
+
+    .step {
+      background: #fff0f3;
+      border: 1px solid #ffdde1;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 15px;
+      color: #444;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .qr-img {
+      max-width: 200px;
+      display: block;
+      margin: 15px auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn-giant {
+      font-size: 20px;
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    .modal-content {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      background: #ffe6ec;
+      border-bottom: none;
+      color: #e6005c;
+      font-weight: 700;
+    }
+
+    .modal-body {
+      padding: 25px;
     }
   </style>
 </head>
-<body>
-  <div class="box">
-    <h2>📘 Guia para Viralizar no TikTok</h2>
-    <p style="font-size:18px;font-weight:600;">Apenas R$30</p>
-    <button id="cta">👉 Adquirir meu guia</button>
 
-    <div id="pixArea" class="hidden">
-      <div class="pix-box">
-        <p>💳 Pague via PIX</p>
-        <div class="pix-key" id="pixKey">suachavepix@exemplo.com</div>
-        <button onclick="copyPix()">Copiar PIX</button>
-        <img src="qr-placeholder.png" alt="QR PIX" class="qr">
-        <p class="note">Após pagar clique abaixo 👇</p>
-        <button onclick="showPaid()">✅ Já paguei</button>
+<body>
+  <div class="container hero">
+    <img src="4B5F03AE-78B8-4906-BB1E-02B77FE129CE.jpeg" alt="Capa do guia" class="cover-img">
+    <h2>Guia para viralizar no TikTok</h2>
+    <p class="h5 text-danger fw-bold">Escolha uma opção — tudo simples</p>
+
+    <div class="product-row">
+      <div style="flex:1 1 260px;max-width:320px;">
+        <button class="btn btn-primary big-btn btn-giant w-100" data-product="Guia PDF" data-amount="30.00" data-qr="pix_30.png">📘 Guia PDF — R$30</button>
+      </div>
+      <div style="flex:1 1 260px;max-width:320px;">
+        <button class="btn btn-success big-btn btn-giant w-100" data-product="Análise de Perfil" data-amount="20.00" data-qr="pix_20.png">🔎 Análise de Perfil — R$20</button>
+      </div>
+      <div style="flex:1 1 260px;max-width:320px;">
+        <button class="btn btn-warning big-btn btn-giant w-100" data-product="Guia + Análise" data-amount="50.00" data-qr="pix_50.png">🛒 Levar os 2 — R$50</button>
+      </div>
+    </div>
+
+    <p class="note">Clique em uma opção. Vai abrir instruções fáceis com um botão grande para copiar a chave PIX e pagar.</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="payModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Pagar com PIX</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="fs-5" id="modalProduct">Produto</p>
+          <p class="h4 text-danger fw-bold" id="modalAmount">R$30</p>
+          <div class="pix-key" id="modalPix">Alexandre1997brasil@gmail.com</div>
+          <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-dark btn-lg" id="copyPixBtn">📋 Copiar chave PIX</button>
+          </div>
+          <img src="pix_30.png" id="modalQr" class="qr-img" alt="QR PIX">
+          <div class="step">
+            <strong>Passo a passo:</strong>
+            <ol class="mb-0 mt-2">
+              <li>Abrir o app do banco;</li>
+              <li>Escolher PIX → colar chave (ou escanear QR);</li>
+              <li>Colocar o valor mostrado;</li>
+              <li>Confirmar e voltar aqui;</li>
+            </ol>
+          </div>
+          <p class="note">Depois de pagar, clique em "✅ Já paguei" e envie o comprovante pelo WhatsApp.</p>
+          <div class="d-grid gap-2 mt-3">
+            <button id="waitingBtn" class="btn btn-secondary btn-lg">⏳ Aguardando pagamento...</button>
+            <button id="paidBtn" class="btn btn-success btn-lg" style="display:none">✅ Já paguei</button>
+          </div>
+          <p class="small mt-2 text-muted">Ao clicar em "Já paguei", o WhatsApp abrirá com a mensagem pronta.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <script>
-    const PIX_KEY = "suachavepix@exemplo.com"; // sua chave pix aqui
-    const WA_PHONE = "5511999999999"; // seu número WhatsApp internacional
-    const PIX_AMOUNT = "30.00";
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    document.getElementById("cta").addEventListener("click", ()=>{
-      document.getElementById("pixArea").classList.remove("hidden");
+  <script>
+    const PIX_KEY = "Alexandre1997brasil@gmail.com";
+    const WA_PHONE = "5562992525702";
+    let selectedProduct = "";
+    let selectedAmount = "";
+    let selectedQr = "";
+
+    const payModal = new bootstrap.Modal(document.getElementById('payModal'));
+
+    document.querySelectorAll('[data-product]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedProduct = btn.getAttribute('data-product');
+        selectedAmount = btn.getAttribute('data-amount');
+        selectedQr = btn.getAttribute('data-qr');
+        document.getElementById('modalProduct').textContent = selectedProduct;
+        document.getElementById('modalAmount').textContent = 'R$ ' + selectedAmount.replace('.', ',');
+        document.getElementById('modalPix').textContent = PIX_KEY;
+        document.getElementById('modalQr').src = selectedQr;
+        payModal.show();
+        document.getElementById('waitingBtn').style.display = 'inline-block';
+        document.getElementById('paidBtn').style.display = 'none';
+        setTimeout(() => {
+          document.getElementById('waitingBtn').style.display = 'none';
+          document.getElementById('paidBtn').style.display = 'inline-block';
+        }, 2500);
+      });
     });
 
-    function copyPix(){
-      navigator.clipboard.writeText(PIX_KEY).then(()=>{
-        alert("Chave PIX copiada ✅");
+    document.getElementById('copyPixBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(PIX_KEY).then(() => {
+        alert('Chave PIX copiada ✅');
+      }).catch(() => {
+        alert('Não foi possível copiar automaticamente. Copie manualmente: ' + PIX_KEY);
       });
-    }
+    });
 
-    function showPaid(){
-      const text = `Olá! Paguei o guia TikTok - R$${PIX_AMOUNT}.\nChave PIX: ${PIX_KEY}.\nSegue meu comprovante:`;
-      const wa = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
-      window.open(wa,"_blank");
-    }
+    document.getElementById('paidBtn').addEventListener('click', () => {
+      const text = `Olá! Acabei de pagar o ${selectedProduct} - R$${selectedAmount}. Chave PIX usada: ${PIX_KEY}. Vou enviar o comprovante.`;
+      const wa = `https://wa.me/${WA_PHONE}?text=` + encodeURIComponent(text);
+      window.open(wa, '_blank');
+    });
   </script>
 </body>
 </html>
