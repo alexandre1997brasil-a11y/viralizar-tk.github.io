@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guia Viralizar no TikTok</title>
+  <style>
+    body{
+      margin:0;
+      font-family:sans-serif;
+      background:#fff;
+      color:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      text-align:center;
+      padding:20px;
+    }
+    .box{ max-width:480px; }
+    button{
+      background:#ff3b6b;
+      color:#fff;
+      border:0;
+      padding:16px 22px;
+      border-radius:10px;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:20px;
+      width:100%;
+    }
+    .hidden{ display:none; }
+    .pix-box{
+      margin-top:20px;
+      padding:16px;
+      border:2px solid #eee;
+      border-radius:12px;
+    }
+    .pix-key{
+      font-size:20px;
+      font-weight:700;
+      word-wrap:break-word;
+      margin:12px 0;
+    }
+    .qr{
+      margin:14px auto;
+      max-width:180px;
+    }
+    .note{
+      font-size:14px;
+      margin:10px 0;
+      color:#555;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>📘 Guia para Viralizar no TikTok</h2>
+    <p style="font-size:18px;font-weight:600;">Apenas R$30</p>
+    <button id="cta">👉 Adquirir meu guia</button>
+
+    <div id="pixArea" class="hidden">
+      <div class="pix-box">
+        <p>💳 Pague via PIX</p>
+        <div class="pix-key" id="pixKey">suachavepix@exemplo.com</div>
+        <button onclick="copyPix()">Copiar PIX</button>
+        <img src="qr-placeholder.png" alt="QR PIX" class="qr">
+        <p class="note">Após pagar clique abaixo 👇</p>
+        <button onclick="showPaid()">✅ Já paguei</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const PIX_KEY = "suachavepix@exemplo.com"; // sua chave pix aqui
+    const WA_PHONE = "5511999999999"; // seu número WhatsApp internacional
+    const PIX_AMOUNT = "30.00";
+
+    document.getElementById("cta").addEventListener("click", ()=>{
+      document.getElementById("pixArea").classList.remove("hidden");
+    });
+
+    function copyPix(){
+      navigator.clipboard.writeText(PIX_KEY).then(()=>{
+        alert("Chave PIX copiada ✅");
+      });
+    }
+
+    function showPaid(){
+      const text = `Olá! Paguei o guia TikTok - R$${PIX_AMOUNT}.\nChave PIX: ${PIX_KEY}.\nSegue meu comprovante:`;
+      const wa = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+      window.open(wa,"_blank");
+    }
+  </script>
+</body>
+</html>
